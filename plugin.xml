@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Sample Category"
+            id="CostChecker">
+      </category>
+      <view
+            class="energycostchecker.view.SelectionView"
+            id="costchecker.SelectionView"
+            name="SelectionView"
+            icon="icons/sample.png"
+            category="CostChecker"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            class="energycostchecker.view.CostChekerPreferencePage"
+            id="energycostchecker.view.CostChekerPreferencePage"
+            name="CostChecker Preferences">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="energycostchecker.listener.PreferenceInitializer">
+      </initializer>
+   </extension>
+
+</plugin>
